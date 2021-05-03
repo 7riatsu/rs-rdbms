@@ -1,9 +1,9 @@
 use anyhow::Result;
 
-use relly::query::{IndexScan, TupleSearchMode, PlanNode};
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
-use relly::tuple;
+use rs_rdbms::query::{IndexScan, TupleSearchMode, PlanNode};
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
+use rs_rdbms::tuple;
 
 // SELECT * WHERE last_name = 'Smith'
 // with index

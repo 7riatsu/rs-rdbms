@@ -1,8 +1,8 @@
 use anyhow::Result;
 
-use relly::btree::{BTree, SearchMode};
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
+use rs_rdbms::btree::{BTree, SearchMode};
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
 
 fn main() -> Result<()> {
     let disk = DiskManager::open("large.btr")?;

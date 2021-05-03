@@ -1,9 +1,9 @@
 use anyhow::Result;
 
-use relly::query::{Filter, SeqScan, TupleSearchMode, PlanNode};
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
-use relly::tuple;
+use rs_rdbms::query::{Filter, SeqScan, TupleSearchMode, PlanNode};
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
+use rs_rdbms::tuple;
 
 fn main() -> Result<()> {
     let disk = DiskManager::open("simple.rly")?;

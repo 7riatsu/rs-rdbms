@@ -1,9 +1,9 @@
 use anyhow::Result;
 use md5::{Md5, Digest};
 
-use relly::btree::BTree;
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::DiskManager;
+use rs_rdbms::btree::BTree;
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::DiskManager;
 
 const NUM_PAIRS: u32 = 1_000_000;
 

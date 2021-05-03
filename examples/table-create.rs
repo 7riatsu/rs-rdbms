@@ -1,8 +1,8 @@
 use anyhow::Result;
 
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
-use relly::table::{Table, UniqueIndex};
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
+use rs_rdbms::table::{Table, UniqueIndex};
 
 /* CREATE TABLE
    |id    |first_name|last_name|

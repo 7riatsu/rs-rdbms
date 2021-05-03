@@ -1,8 +1,8 @@
 use anyhow::Result;
 
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
-use relly::table::SimpleTable;
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
+use rs_rdbms::table::SimpleTable;
 
 fn main() -> Result<()> {
     let disk = DiskManager::open("simple.rly")?;

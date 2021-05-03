@@ -1,8 +1,8 @@
 use anyhow::Result;
 use md5::Md5;
-use relly::buffer::{BufferPool, BufferPoolManager};
-use relly::disk::{DiskManager, PageId};
-use relly::table::{Table, UniqueIndex};
+use rs_rdbms::buffer::{BufferPool, BufferPoolManager};
+use rs_rdbms::disk::{DiskManager, PageId};
+use rs_rdbms::table::{Table, UniqueIndex};
 use sha1::{Digest, Sha1};
 
 const NUM_ROWS: u32 = 10_000_000;
