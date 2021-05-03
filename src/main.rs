@@ -4,8 +4,13 @@ pub struct DiskManager {
 }
 
 impl DiskManager {
-    pub fn new(data_file: File) -> io::Result<Self> {
-        // TODO
+    pub fn new(heap_file: File) -> io::Result<Self> {
+        let heap_file_size = heap_file.metadata()?.len();
+        let next_page_id = heap_file_size / PAGE_SIZE as u64;
+        Ok(self {
+            heap_file,
+            next_page_id,
+        })
     }
 
     pub fn open(data_file_path: impl AsRef<Path>) -> io::Result<Self> {
