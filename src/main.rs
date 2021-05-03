@@ -13,8 +13,13 @@ impl DiskManager {
         })
     }
 
-    pub fn open(data_file_path: impl AsRef<Path>) -> io::Result<Self> {
-        // TODO
+    pub fn open(heap_file_path: impl AsRef<Path>) -> io::Result<Self> {
+        let heap_file = OpenOptions::new()
+            .read(true)
+            .write(true)
+            .create(true)
+            .open(heap_file_path)?;
+        Self::new(heap_file)
     }
 
     pub fn allocate_page(&mut self) -> PageId {
