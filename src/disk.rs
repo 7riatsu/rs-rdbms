@@ -3,7 +3,7 @@ pub struct DiskManager {
     next_page_id: u64,
 }
 
-pub struct PageId (pub u64);
+pub struct PageId(pub u64);
 
 impl DiskManager {
     pub fn new(heap_file: File) -> io::Result<Self> {
