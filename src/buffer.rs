@@ -15,3 +15,9 @@ pub struct BufferPool {
     buffers: Vec<Frame>,
     next_victim_id: BufferId,
 }
+
+pub struct BufferPoolManager {
+    disk: DiskManager,
+    pool: BufferPool,
+    page_table: HashMap<PageId, BufferId>,
+}
