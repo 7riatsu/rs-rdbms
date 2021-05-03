@@ -1,0 +1,9 @@
+[package]
+name = "rs-rdbms"
+version = "0.1.0"
+authors = ["7riatsu <atsuki02jojo@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
