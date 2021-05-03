@@ -1,3 +1,11 @@
+use std::cell::{Cell, RefCell};
+use std::collections::HashMap;
+use std::io;
+use std::ops::{Index, IndexMut};
+use std::rc::Rc;
+
+use crate::disk::{DiskManager, PageId, PAGE_SIZE};
+
 pub type Page = [u8; PAGE_SIZE];
 
 pub struct Buffer {
