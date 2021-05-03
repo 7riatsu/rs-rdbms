@@ -3,6 +3,8 @@ pub struct DiskManager {
     next_page_id: u64,
 }
 
+pub struct PageId (pub u64);
+
 impl DiskManager {
     pub fn new(heap_file: File) -> io::Result<Self> {
         let heap_file_size = heap_file.metadata()?.len();
@@ -23,7 +25,9 @@ impl DiskManager {
     }
 
     pub fn allocate_page(&mut self) -> PageId {
-        // TODO
+        let page_id = self.next_page_id;
+        self.next_page_id += 1;
+        PageId(page_id)
     }
 
     pub fn read_page_data(&mut self, page_id: PageId, data: &mut [u8]) -> io::Result<()> {
