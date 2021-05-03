@@ -31,7 +31,9 @@ impl DiskManager {
     }
 
     pub fn read_page_data(&mut self, page_id: PageId, data: &mut [u8]) -> io::Result<()> {
-        // TODO
+        let offset = PAGE_SIZE as u64 * page_id.to_u64();
+        self.heap_file.seek(SeekFrom::Start(offset))?;
+        self.heap_file.read_exact(data)
     }
 
     pub fn write_page_data(&mut self, page_id: PageId, data: &[u8]) -> io::Result<()> {
